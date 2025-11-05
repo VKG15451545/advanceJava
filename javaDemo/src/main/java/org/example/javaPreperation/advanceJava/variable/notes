@@ -1,0 +1,13 @@
+-----------------VARIABLE--------------
+* containers used for storing data values
+* Memory allocation
+    memory cell --[address,name]
+    byte     ---1byte 0      ----Integral
+    short  -----2byte 0 ---------Integral
+    int --------4byte 0   -------Integral
+    long -------8byte 0L    -----Integral
+    char -------2byte '\u0000'---Character
+    float ------4byte 0.0f  -----Decimal
+    double -----8byte 0.0d ------Decimal
+    boolean ----1bit(till 1.3 JDK uses 1byte)  false
+

@@ -1,0 +1,142 @@
+Java Coding Interview Preparation Sheet (For 2-Year Experience)
+SECTION 1 – Core Java & OOP (Foundation)
+
+Build your base and demonstrate real Java understanding.
+
+Q1. Explain and implement a Singleton class (thread-safe).
+Q2. Create an Immutable class (similar to String).
+Q3. Demonst
+rate method overloading vs overriding.
+Q4. Write a class to show deep copy vs shallow copy.Q5. Implement Factory Design Pattern.
+Q6. Create a Builder Pattern for an object like User.
+Q7. Write a program to override equals() and hashCode() properly.
+Q8. Implement Enum-based Singleton (advanced).
+
+SECTION 2 – String Programs
+
+Most common in interviews for logic & algorithmic thinking.
+
+Q1. Reverse a string manually (without using StringBuilder.reverse()).
+Q2. Check if a string is a palindrome.
+Q3. Find the first non-repeating character.
+Q4. Count occurrence of characters using HashMap.
+Q5. Check if two strings are anagrams.
+Q6. Remove duplicate characters from a string.
+Q7. Find the longest substring without repeating characters.
+Q8. Find frequency of each word in a sentence.
+
+SECTION 3 – Array & Matrix Problems
+
+Covers loops, data structures, and optimization.
+
+Q1. Find largest and smallest number in an array.
+Q2. Find second largest number in an array.
+Q3. Reverse an array in place.
+Q4. Check if two arrays are equal.
+Q5. Move all zeros to end of array.
+Q6. Find missing number in a sequence (1…n).
+Q7. Find duplicate elements in an array.
+Q8. Rotate array by k elements.
+Q9. Implement binary search.
+Q10. Print spiral order of a matrix.
+
+SECTION 4 – Collections & Map
+
+Every Java interview has a HashMap or List logic question.
+
+Q1. Count frequency of elements using HashMap.
+Q2. Sort a HashMap by keys and values.
+Q3. Remove duplicates from ArrayList.
+Q4. Sort custom objects (like Employee by salary).
+Q5. Detect duplicates in a list.
+Q6. Implement LRU Cache using LinkedHashMap.
+Q7. Iterate and remove elements safely using Iterator.
+Q8. Difference between HashMap, LinkedHashMap, and TreeMap.
+
+SECTION 5 – Data Structures & Algorithms
+
+Builds logical problem-solving using Java.
+
+Q1. Implement Stack using array.
+Q2. Implement Queue using LinkedList.
+Q3. Check balanced parentheses using Stack.
+Q4. Reverse a linked list.
+Q5. Detect a loop in linked list.
+Q6. Find middle element of linked list.
+Q7. Perform DFS & BFS on a binary tree.
+Q8. Print all leaf nodes of a tree.
+Q9. Find height of a binary tree.
+Q10. Implement sorting algorithms (bubble, insertion, quicksort).
+
+SECTION 6 – Java 8+ Features
+
+Common for modern interviews (streams, lambdas, optionals).
+
+Q1. Use Stream API to filter even numbers from list.
+Q2. Find second highest salary using streams.
+Q3. Convert list to map using Collectors.toMap().
+Q4. Count words in a list using groupingBy().
+Q5. Demonstrate Optional usage to avoid null checks.
+Q6. Use flatMap() to flatten nested lists.
+Q7. Parallel stream example and its difference from sequential.
+Q8. Sort custom objects using Lambda.
+
+SECTION 7 – Multithreading & Concurrency
+
+For 2-year devs, they expect working knowledge.
+
+Q1. Create two threads to print odd and even numbers alternately.
+Q2. Implement producer-consumer using wait() and notify().
+Q3. Demonstrate synchronization on method and block.
+Q4. Use ExecutorService for thread pooling.
+Q5. Demonstrate CountDownLatch or CyclicBarrier.
+Q6. Show how to make a thread-safe Singleton.
+Q7. Create deadlock and solve it.
+
+SECTION 8 – File Handling & Serialization
+
+Common for practical coding rounds.
+
+Q1. Read file line by line and count words.
+Q2. Write content to a file.
+Q3. Serialize and deserialize a Java object.
+Q4. Read large files efficiently using BufferedReader.
+Q5. Merge two files into one.
+
+SECTION 9 – JDBC & SQL Integration
+
+Important for full-stack or backend Java roles.
+
+Q1. Connect to MySQL database using JDBC.
+Q2. Perform CRUD operations (insert, select, update, delete).
+Q3. Use PreparedStatement to avoid SQL injection.
+Q4. Handle SQL exceptions gracefully.
+Q5. Close all connections using try-with-resources.
+
+SECTION 10 – Real-world Mini Projects
+
+Helps in system design and HR discussion rounds.
+
+Q1. Employee management system (CRUD using OOP).
+Q2. ATM simulation.
+Q3. Library management system.
+Q4. Student grade analyzer using Java 8 streams.
+Q5. Basic chat server using sockets.
+Q6. Simple Spring Boot REST API (if familiar).
+
+📘 Bonus Topics to Revise:
+
+Java Memory (Stack vs Heap)
+
+Garbage collection
+
+Difference between HashMap and ConcurrentHashMap
+
+Thread safety & immutability
+
+Exception hierarchy
+
+Static vs final vs abstract
+
+Would you like me to generate this sheet as a downloadable PDF (formatted with checkboxes, difficulty tags, and blank space for notes)?
+It’ll look like a personal Java interview workbook — easy to print and track progress.
