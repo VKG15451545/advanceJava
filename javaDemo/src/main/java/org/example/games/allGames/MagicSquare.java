@@ -6,21 +6,16 @@ import org.example.games.commonMethods.PrintAnyArray;
 import java.util.Scanner;
 
 public class MagicSquare implements Game {
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    private int size;
 
     public static void printMagicSquare(Integer k){
         if(k%2==0){
             System.out.println("Invalid Square Size Given");
             return;
         }
+        int centerEle = (k*k+1)/2;
+        int magicSum = k * centerEle;
+        System.out.printf("Magic Sum : %d, Center Number: %d",magicSum,centerEle);
+        System.out.println();
         Integer[][] grid = new Integer[k][k];
         int st_c = k/2;
         int st_r = 0;
