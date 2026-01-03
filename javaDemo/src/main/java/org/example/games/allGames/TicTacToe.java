@@ -20,13 +20,13 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
     JButton[][] buttons = new JButton[3][3];
     JButton resetButton;
     JLabel scoreLabel;
-
+    JComboBox<String> modeBox;
     char currentPlayer = 'X';   // Human = X, AI = O
     boolean gameOver = false;
 
     int xScore = 0;
     int oScore = 0;
-
+    boolean vsAI = true;
     Random random = new Random();
 
     public TicTacToe() {
@@ -41,6 +41,21 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
         scoreLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(scoreLabel, BorderLayout.NORTH);
 
+        //top panel(mode + score)
+        JPanel topPanel = new JPanel(new GridLayout(2, 1));
+        modeBox = new JComboBox<>(new String[]{
+                "Player vs Computer",
+                "Player vs Player"
+        });
+        modeBox.setFont(new Font("Arial", Font.BOLD, 16));
+        modeBox.addActionListener(e -> switchMode());
+        topPanel.add(modeBox);
+
+        scoreLabel = new JLabel("X: 0   O: 0", SwingConstants.CENTER);
+        scoreLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        topPanel.add(scoreLabel);
+
+        add(topPanel, BorderLayout.NORTH);
         // Game Board
         JPanel boardPanel = new JPanel(new GridLayout(3, 3));
         Font font = new Font("Arial", Font.BOLD, 60);
@@ -74,11 +89,17 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
 
         if (!clicked.getText().equals("")) return;
 
-        makeMove(clicked, 'X');
+        makeMove(clicked, currentPlayer);
 
         if (checkGameEnd()) return;
 
-        aiMove();
+        switchPlayer();
+        if(vsAI && currentPlayer == '0'){
+            aiMove();
+        }
+    }
+    private void switchPlayer() {
+        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
     }
 
     private void makeMove(JButton button, char player) {
@@ -90,11 +111,10 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
         if (gameOver) return;
 
         JButton move = findBestMove();
-        if (move != null) {
-            makeMove(move, 'O');
-        }
+        makeMove(move, 'O');
 
         checkGameEnd();
+        switchPlayer();
     }
 
     private JButton findBestMove() {
@@ -151,11 +171,11 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
     private boolean checkGameEnd() {
         if (checkWin('X')) {
             xScore++;
-            showResult("You Win!");
+            showResult("Player X Wins!");
             return true;
         } else if (checkWin('O')) {
             oScore++;
-            showResult("Computer Wins!");
+            showResult("Player O Wins!");
             return true;
         } else if (isBoardFull()) {
             showResult("It's a Draw!");
@@ -195,6 +215,10 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
 
     private void updateScore() {
         scoreLabel.setText("X: " + xScore + "   O: " + oScore);
+    }
+    private void switchMode() {
+        vsAI = modeBox.getSelectedIndex() == 0;
+        resetBoard();
     }
 
     private void resetBoard() {
