@@ -13,9 +13,7 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
     @Override
     public void start(Scanner sc) {
         System.out.println("running TicTacToe...");
-        TicTacToe ticTacToe = new TicTacToe();
-
-
+        new TicTacToe();
     }
     JButton[][] buttons = new JButton[3][3];
     JButton resetButton;
@@ -94,7 +92,7 @@ public class TicTacToe extends JFrame implements ActionListener, Game {
         if (checkGameEnd()) return;
 
         switchPlayer();
-        if(vsAI && currentPlayer == '0'){
+        if(vsAI && currentPlayer == 'O'){
             aiMove();
         }
     }
