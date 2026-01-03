@@ -2,10 +2,14 @@ package org.example.games;
 
 import org.example.games.allGames.MagicSquare;
 import org.example.games.allGames.SudokuSolver;
+import org.example.games.allGames.TicTacToe;
+import org.example.games.allGames.cses.NumberSpiral;
 
 public enum GameName {
     MAGIC_SQUARE(1L,"magicSquare",new MagicSquare()),
-    SUDOKU_SOLVER(2L,"sudokuSolver",new SudokuSolver());
+    SUDOKU_SOLVER(2L,"sudokuSolver",new SudokuSolver()),
+    NUMBER_SPIRAL(3L,"numberSpiral",new NumberSpiral()),
+    TIC_TAC_TOE(4L,"ticTacToe",new TicTacToe());
     private final Long id;
     private final String name;
     private final Game game;
