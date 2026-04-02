@@ -118,4 +118,18 @@ public class SingleLinkedList {
             System.out.println("Invalid Position");
         }
     }
+    public Node reverseList(Node head){
+        if(head == null || head.next == head){
+            return head;
+        }
+        Node prev=null;
+        Node curr = head;
+        while (curr != null){
+            Node temp = curr.next ;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev;
+    }
 }
