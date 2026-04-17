@@ -26,9 +26,9 @@ public class RobotCollisions {
                     s.pop();
                     robot.getValue().health =0;
                 }
-                if(robot.getValue().health > 0){
-                    s.push(robot.getKey());
-                }
+            }
+            if(robot.getValue().health > 0){
+                s.push(robot.getKey());
             }
 
         }

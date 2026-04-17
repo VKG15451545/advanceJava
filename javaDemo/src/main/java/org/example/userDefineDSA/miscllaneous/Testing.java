@@ -8,5 +8,7 @@ public class Testing {
         Integer b1 = 20;
         System.out.println(a.equals(b));
         System.out.println(a1==b1);
+        KadaneAlgorithm kd = new KadaneAlgorithm();
+        System.out.println(kd.maxSubarraySumCircular(new int[]{5,-3,5}));
     }
 }
