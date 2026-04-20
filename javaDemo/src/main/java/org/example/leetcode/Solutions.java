@@ -11,9 +11,10 @@ public class Solutions {
         Scanner sc = new Scanner(System.in);
         System.out.println("Select Problems:");
         for(EnumProblemName prob : EnumProblemName.values()){
-            System.out.println(prob.getId() + "." + prob.getDescription());
+            System.out.println(prob.getId() + "." + prob.getName());
         }
         int probSeq = sc.nextInt();
+        System.out.println(Arrays.stream(EnumProblemName.values()).filter(x->x.getId()==probSeq).findAny().get().getDescription());
         if(Arrays.stream(EnumProblemName.values()).anyMatch(x->x.getId()==probSeq)){
             try{
                  Class<?> clazz = EnumProblemName.getById(probSeq);

@@ -13,7 +13,7 @@ public class ConceptRevision {
             System.out.println(enumConceptName.getId()+"."+ enumConceptName.getName() + ":"+enumConceptName.getDesc());
         }
         try{
-            Class<?> clazz = EnumProblemName.getById(sc.nextInt());
+            Class<?> clazz = EnumConceptName.getById(sc.nextInt());
             Object obj = clazz.getDeclaredConstructor().newInstance();
             Method method = clazz.getMethod("revision");
             method.invoke(obj);
