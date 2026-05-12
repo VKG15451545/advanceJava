@@ -1,0 +1,64 @@
+
+    // definition: a class that allowed  only one instance/object to be instantiated/created in entire application lifecycle.
+    // provide global access to that single object
+    // used when only one shared object is needed
+    // example: a database connection manager,Logger,Cache Manager,configuration,Thread pool
+    // Rules : -> constructor must be private ( object can't be created using "new" keyword )
+    //         -> create static instant ( store single object)
+    //         -> provide public static method ( return same object/instance)
+    // Types : 1) Eager Initialization
+                  class BasicSingleton {
+                      private static BasicSingleton instance = new BasicSingleton(); // static object ( 1 object created)
+                      private BasicSingleton(){}; // new object creation not allowed
+                      public static BasicSingleton getInstance(){ // public method to access already created instance
+                          return instance;
+                      }
+               2) Lazy Initialization :
+                    class LazyInitializationSingletonClass {
+                        private static LazyInitializationSingletonClass instance;
+                        private LazyInitializationSingletonClass(){};
+                        public static LazyInitializationSingletonClass getInstance(){
+                            if(instance==null){
+                                instance = new LazyInitializationSingletonClass();
+                            }
+                            return instance;
+                        }
+                        // not thread safe
+                        // multiple thread can create multiple instances
+                    }
+               3)Thread Safe Singleton class:
+                  class ThreadSafeSingletonClass {
+                      private static ThreadSafeSingletonClass instance;
+                      private ThreadSafeSingletonClass(){};
+                      public static synchronized ThreadSafeSingletonClass getInstance(){
+                          if(instance==null){
+                              instance = new ThreadSafeSingletonClass();
+                          }
+                          return instance;
+                      }
+                      // Lazy initialized (object is not created on start of application)
+                      // Thread safe but become slow due to "synchronized" keyWord
+                  }
+               4) Double checked Singleton Class:
+
+               5) Bill Pugh:
+
+                  public class BillPughSingleton {
+                    private BillPughSingleton(){};
+                    private static class Holder{
+                        private static final BillPughSingleton instance = new BillPughSingleton();
+                    }
+                    public static BillPughSingleton getInstance(){
+                        return Holder.instance;
+                    }}
+
+               6) EnumSingleton
+                      -> protect against Reflection,Serialization,Cloning
+
+    // ISSUES:
+        1.Reflection can call private constructor
+        2.Deserialization/serialization can create new object (readresolve to solve )
+        3.cloning (override clone method)
+    // springBoot:
+        ->by default beans(@Service,@Component,@Repository) are singleton scoped (one object per IOC container)
+        ->spring singleton are not thread-safe
